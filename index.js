@@ -11,7 +11,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 const db = new pg.Client({
-    connectionString: process.env.DB_URL
+    connectionString: process.env.DB_URL,
+    ssl: { rejectUnauthorized: false}
 });
   
 db.connect();
