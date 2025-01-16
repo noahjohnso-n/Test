@@ -11,12 +11,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 const db = new pg.Client({
-    user: DB_USER,
-    host: DB_HOST,
-    database: DB_USER,
-    password: DB_PASSWORD,
-    port: process.env.DB_PORT,
-    // connectionString: process.env.DB_URL,
+    // user: DB_USER,
+    // host: DB_HOST,
+    // database: DB_USER,
+    // password: DB_PASSWORD,
+    // port: process.env.DB_PORT,
+    connectionString: process.env.DB_URL,
     ssl: { rejectUnauthorized: false}
 });
   
